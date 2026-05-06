@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mein Lieblingssport – CSS Praxisbeispiel</title>
+    <link href="main.css" rel="stylesheet">
+    <style>
+        /* todo */
+    </style>
+</head>
+
+<body>
+
+    <!-- ID: #seitenheader -->
+    <header id="seitenheader">
+        <h1>Basketball: Der besondere Sport</h1>
+    </header>
+
+    <!-- FLEXBOX: Navigation -->
+    <nav>
+        <a href="überdensport.html">Über den Sport</a>
+        <a href="https://xbotgo.com/de/blogs/knowledge/facts-about-basketball">Fakten</a>
+        <a href="regeln.html">Regeln</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+
+    <!-- ID: #hauptinhalt -->
+    <main id="hauptinhalt">
+
+        <section id="ueber">
+            <h2>Über den Sport</h2>
+            <p>
+                Basketball ist ein <span class="hervorgehoben">Mannschaftssport</span>, der 1891 von James Naismith erfunden wurde. Zwei Teams mit je
+                <span class="hervorgehoben">5 Spielern</span> versuchen, den Ball durch den Korb des Gegners zu werfen.
+            </p>
+
+            <!-- Klasse: .infobox -->
+            <div class="infobox">
+                <p>
+                    <strong>Tipp:</strong> Basketball ist nicht nur ein Sport – er trainiert Koordination, Teamgeist und Ausdauer gleichzeitig.
+                </p>
+            </div>
+        </section>
+
+        <section id="fakten">
+            <h2>Zahlen & Fakten</h2>
+
+            <!-- FLEXBOX: .fakten-leiste mit space-between -->
+            <div class="fakten-leiste">
+                <div class="fakt">
+                    <span>5</span> Spieler pro Team
+                </div>
+                <div class="fakt">
+                    <span>28 m</span> Spielfeldlänge
+                </div>
+                <div class="fakt">
+                    <span>48 Min</span> Spielzeit (NBA)
+                </div>
+                <div class="fakt">
+                    <span>3,05 m</span> Korbhöhe
+                </div>
+            </div>
+        </section>
+
+        <section id="regeln">
+            <h2>Wichtige Regeln</h2>
+
+            <!-- FLEXBOX: .karten-container mit flex-wrap -->
+            <div class="karten-container">
+                <div class="karte">
+                    <h2>Dribbling</h2>
+                    <p>Der Ball muss beim Laufen gedribbelt werden. Doppeldribbling ist verboten.</p>
+                </div>
+                <div class="karte">
+                    <h2>Fouls</h2>
+                    <p>Körperkontakt ist eingeschränkt. Ab 5 Fouls wird ein Spieler ausgeschlossen.</p>
+                </div>
+                <div class="karte">
+                    <h2>Punkte</h2>
+                    <p>2 Punkte (normal), 3 Punkte (hinter der Linie), 1 Punkt (Freiwurf).</p>
+                </div>
+            </div>
+
+            <a href="mehrerfahren.html" class="button">Mehr erfahren</a>
+        </section>
+
+    </main>
+
+    <!-- ID: #seitenfuss -->
+    <footer id="seitenfuss">
+        <p>Erstellt im Informatikunterricht | Klasse 10 | &copy; 2026</p>
+    </footer>
+
+</body>
+
+</html>
