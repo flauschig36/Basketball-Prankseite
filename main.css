@@ -53,7 +53,7 @@ p{
 }
 
 #seitenfuss {
-    background-color: #1a3c5e;
+    background-color: #163050;
     color: #aaa;
     text-align: center;
     padding: 15px;
@@ -141,6 +141,7 @@ nav{
     align-items: center; 
     gap: 30px;
     padding: 12px 0px 12px 0px;
+    font-family: sans-serif;
 
 }
 
