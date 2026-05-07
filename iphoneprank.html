@@ -12,15 +12,32 @@
             margin: 0;
         }
         input {
-            font-size: 1rem;
+            font-size: 1.1rem;
+            height: 3.5rem;
+            border-radius: 1rem;
+            padding: 0.4rem 0px 0.4rem 1.5rem;
+            border:#d1d5db solid 2px ;
+            background-color: #f9fafb;
+            transition: all 0.4s ease;
+        }
+
+        input:focus {
+            background-color: #163050;
+            color: white;
+            border: #d1d5db solid 1px;
+            box-shadow: 0px 17px 48px 0px rgba(219, 219, 219, 0.94);
+            outline: none;
+            
         }
     h1 {
         font-family: "Martian Mono", monospace;
         color: white;
         background-color: #163050;
         padding: 3rem;
-        border-radius: 2rem;
+        border-radius: 1.2rem;
         font-size: 1.5em;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
     }
     .container {
 
@@ -29,6 +46,15 @@
         align-items: center;
         max-width: 70%;
         margin: 0 auto;
+    }
+    .question {
+        display: grid;
+        grid-template-columns: 900px 900px;
+        justify-content: center;
+        
+        column-gap: 70px;
+        row-gap: 3rem;
+        
     }
         nav {
 	background-color: #163050;
@@ -80,6 +106,7 @@
     <div class="container">
     <h1>Du musst nur noch kurz ein paar Daten angeben und dann bekommst du das neue Iphone. Wir nutzen die Daten natürlich nur für den Transport.😉</h1>
     </div>
+    <div class="question">
     <input size="40" type="text" inputmode="numeric" placeholder="Deine IBAN" >
     <input size="40" placeholder="Lieblingsfarbe deiner Katze">
     <input size="40" placeholder="Was hast du gestern zum frühstück gegessen?">
@@ -90,6 +117,7 @@
     <input size="60" placeholder="Das Wlan passwort deines Nachbarn (wir sagen es nicht weiter)😉">
     <input size="60" placeholder="Wo versteckst du deinen Ersatz Schlüssel? (Nur zur Sicherheit)">
     <input size="40" placeholder="Alle Infos deines Personalausweises">
+    </div>
     <p>Notiz: man klickt auf weiter und muss dann captcha lösen.Danach dann: tut uns leid. es gab einen serverfehler. Grund: der ram ist nicht eingebaut und neuer ist zu teuer. Wenn sie spenden wollen, klicken sie auf den Link</p>
     <footer id="seitenfuss">
         <p>Erstellt im Informatikunterricht | Klasse 10 | 2026 | <a href="impressum.html">Impressum</a> </p>
