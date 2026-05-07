@@ -4,14 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Du hat gewonnen!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
     <style>
+        body {
+            margin: 0;
+        }
         input {
             font-size: 1rem;
         }
+    h1 {
+        font-family: "Martian Mono", monospace;
+        color: white;
+        background-color: #163050;
+        padding: 3rem;
+        border-radius: 2rem;
+        font-size: 1.5em;
+    }
+    .container {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 70%;
+        margin: 0 auto;
+    }
+        nav {
+	background-color: #163050;
+	margin: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	font-family: sans-serif;
+	}
+	
+	nav a{
+	font-size: 1.2em;
+	text-decoration: none;
+	color:white;
+	
+	}
+	
+	nav a:hover{
+	text-decoration: none;
+	color: #e67e22;
+    }
+        #seitenfuss {
+    background-color: #163050;
+    color: #aaa;
+    text-align: center;
+    padding: 15px;
+    margin: 30px 0px 0px 0px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+}
+
+#seitenfuss a {
+    color: #aaa;
+    text-decoration: none;
+}
+#seitenfuss a:hover {
+    text-decoration: none;
+    color: #e67e22;
+}
     </style>
 </head>
 <body>
+     <nav>
+        <a  href="index.html">Startseite</a>
+
+    </nav>
+    <div class="container">
     <h1>Du musst nur noch kurz ein paar Daten angeben und dann bekommst du das neue Iphone. Wir nutzen die Daten natürlich nur für den Transport.😉</h1>
+    </div>
     <input size="40" type="text" inputmode="numeric" placeholder="Deine IBAN" >
     <input size="40" placeholder="Lieblingsfarbe deiner Katze">
     <input size="40" placeholder="Was hast du gestern zum frühstück gegessen?">
@@ -23,5 +91,8 @@
     <input size="60" placeholder="Wo versteckst du deinen Ersatz Schlüssel? (Nur zur Sicherheit)">
     <input size="40" placeholder="Alle Infos deines Personalausweises">
     <p>Notiz: man klickt auf weiter und muss dann captcha lösen.Danach dann: tut uns leid. es gab einen serverfehler. Grund: der ram ist nicht eingebaut und neuer ist zu teuer. Wenn sie spenden wollen, klicken sie auf den Link</p>
+    <footer id="seitenfuss">
+        <p>Erstellt im Informatikunterricht | Klasse 10 | 2026 | <a href="impressum.html">Impressum</a> </p>
+    </footer>
 </body>
 </html>
