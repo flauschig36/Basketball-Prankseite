@@ -173,3 +173,11 @@ nav a:hover{
     flex:1;
     min-width: 200px;
 }
+
+.trump {
+    color:#e67e22
+}
+
+.trump:hover{
+    color:#cce0f5
+}
