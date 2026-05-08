@@ -3,9 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog</title>
+    <style>
+
+body {
+    margin: 0;
+}
+nav{
+    background-color:#163050;
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 30px;
+    padding: 12px 0px 12px 0px;
+    font-family: sans-serif;
+
+}
+
+nav a{
+    color: #cce0f5;
+    font-weight: bold;
+    font-size:1em;
+    font-style: none;
+    text-decoration:none;
+
+}
+
+nav a:hover{
+    color: #e67e22;
+    font-style: none;
+    text-decoration:none;
+}
+
+#seitenfuss {
+    background-color: #163050;
+    color: #aaa;
+    text-align: center;
+    padding: 15px;
+    margin: 30px 0px 0px 0px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+}
+
+#seitenfuss a {
+    color: #aaa;
+    text-decoration: none;
+}
+#seitenfuss a:hover {
+    text-decoration: none;
+    color: #e67e22;
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:  white;
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 70%;
+    text-align: center;
+    padding-bottom: 100px;
+    padding-top: 100px;
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-bottom:  40px;
+    color: #1a3c5e;
+    font-weight: bold;
+    box-shadow: 0px 5px 28px 3px rgba(0,0,0,0.57);
+    font-family: "Martian Mono", monospace;
+    flex:nowrap;
+    flex-direction: column;
+    }
+
+    .container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 30px;
+    max-width: 70%;
+    margin:0 auto;
+    text-align: justfy;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-bottom:  40px;
+    color: #1a3c5e;
+    box-shadow: 0px 5px 28px 3px rgba(0,0,0,0.57);
+    font-family: "Martian Mono", monospace;
+    }
+
+    .container h2{
+        text-decoration: underline;
+    }
+    </style>
 </head>
 <body>
-    Notiz: Hier soll ein Blogsystem entstehen
+   <nav>
+        <a href="index.html">Startseite</a>
+    </nav>
+    
+    <div class="container2">
+        <h1>Blog</h1>
+    </div>
+    <div class="container">
+
+        <h2>Was ist der Sinn dieser Website?</h2><br>
+        <p>
+            Auf dieser Website werden hauptsächlich lustige und spontane Projekte zum erlernen von HTML, CSS und JavaScript gecodet. Die Website wird sich also mit der Zeit immer wieder weiter ergänzen. Das Ziel ist es mit dem Abschluss dieses Projektes um die 100 oder mehr Fetures zu haben. Diese sollten dann wieder vereinzelnt über unzählige Unterseiten zu finden sein. <br> Ich wünsche damit viel spaß auf der Seite.
+        </p>
+    </div>
+
+       <div class="container">
+
+        <h2>Wie funktioniert GPS?</h2><br>
+        <p>
+           Stellen Sie sich vor, Sie wachen in einer fremden Stadt auf. Sie wissen nicht, wo Sie sich befinden. Dann nehmen Sie Ihr Handy hervor, öffnen eine Karten-App und plötzlich erscheint ein kleiner blauer Punkt auf dem Bildschirm. Dieser zeigt Ihren genauen Standort an. Es ist kein Zauber oder Raten. Diese Information stammt von den stillschweigend über Ihnen arbeitenden Satelliten. Das GNSS-System befindet sich in einer Höhe von etwa 20 000 Kilometern. Viele Menschen nutzen den Begriff GPS als Synonym für alle Navigationssatellitensysteme, das ist jedoch nicht korrekt. GPS bezieht sich nur auf das vom US Space Force (US-Weltraumarmee) betriebene System der Vereinigten Staaten. Weitere Systeme sind Galileo in Europa, GLONASS in Russland, BeiDou in China und NavIC in Indien.
+
+GPS wurde in den 1970er Jahren von einem Ministerium für Verteidigung in den USA entwickelt. Für die zivile Nutzung stand es ab den 1980er Jahren zur Verfügung. Heute besteht das System aus rund 31 aktiven Satelliten, die die Erde auf einer Höhe von etwa 20 200 Kilometern umkreisen. Jeder Satellit umrundet die Erde zweimal täglich und stellt sicher, dass von fast jedem Punkt der Erde zu jeder Zeit mindestens vier Satelliten sichtbar sind.
+
+Ihr Smartphone empfängt Signale von mehreren Satelliten und nutzt die Methode der Trilateration, um seine Position zu bestimmen. Jeder Satellit sendet zwei wesentliche Informationen aus: seinen genauen Standort im Weltraum und den exakten Zeitpunkt der Signalabsendung. Da sich Radiowellen mit Lichtgeschwindigkeit bewegen – etwa 300 000 Kilometern pro Sekunde –, berechnet das Gerät die Entfernung durch die Messung der Anlaufzeit des Signals.
+
+Theoretisch wären drei Satelliten für eine ebene Fläche ausreichend. Ein vierter Satellit ist jedoch notwendig, da Satelliten extrem präzise Atomuhren verwenden, während das Smartphone über eine weniger genaue interne Uhr verfügt. Schon ein winziger Zeitfehler von einer Mikrosekunde könnte zu einem Positionsfehler von rund 300 Metern führen. Der vierte Satellit korrigiert diesen Fehler und berechnet eine exakte dreidimensionale Position, einschließlich Breite, Länge und Höhe.
+
+Trotz der fortschrittlichen Technologie kann GNSS fehleranfällig sein. Signale können verlangsamt oder verzerrt werden, wenn sie durch die Atmosphäre der Erde hindurchgelangen, insbesondere in der Ionosphäre. In Städten prallen Signale vor dem Erreichen des Telefons an Gebäuden ab – dies nennt man Multipath-Fehler (Mehrpfadeausbreitung). Zur Verbesserung der Genauigkeit reduzieren Korrektursysteme wie EGNOS in Europa Positionsfehler von mehreren Metern auf etwa ein bis drei Meter. Moderne Smartphones erhöhen die Genauigkeit, indem sie Signale aus mehreren GNSS-Systemen gleichzeitig kombinieren. Durch die Nutzung von GPS, Galileo, GLONASS und BeiDou zusammen können Geräte mit mehr Satelliten verbunden werden, was zu einer schnelleren Positionsbestimmung und besserer Präzision führt, selbst in Wäldern oder dicht besiedelten städtischen Gebieten.
+
+        </p>
+    </div>
+
+    <footer id="seitenfuss">
+        <p>Erstellt im Informatikunterricht | Klasse 10 | 2026 | <a href="impressum.html">Impressum</a> </p>
+    </footer>
 </body>
 </html>
