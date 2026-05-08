@@ -4,11 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diese Personen sind in den Epstein Files...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+        }
+        .container {
+            border-radius: 1rem;
+            background-color: #163050;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 45%;
+            min-width: 800px;
+            padding: 4rem;
+            padding-bottom: 2rem;
+            margin-top: 5rem;
+            flex-direction: column;
+            
+        }
+        video {
+            border-radius: 0.7rem;
+            cursor: pointer;
+        }
+        div p {
+            font-size: 1.6em;
+            color: white;
+            font-family: "Google Sans", sans-serif;
+            font-weight: bold;
+        }
+        nav {
+	background-color: #163050;
+	margin: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	font-family: sans-serif;
+	}
+	
+	nav a{
+	font-size: 1.2em;
+	text-decoration: none;
+	color:white;
+	
+	}
+	
+	nav a:hover{
+	text-decoration: none;
+	color: #e67e22;
+    }
+    #seitenfuss {
+    background-color: #163050;
+    color: #aaa;
+    text-align: center;
+    padding: 15px;
+    margin: 30px 0px 0px 0px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+}
+
+#seitenfuss a {
+    color: #aaa;
+    text-decoration: none;
+}
+#seitenfuss a:hover {
+    text-decoration: none;
+    color: #e67e22;
+}
+    </style>
 </head>
 <body>
+<nav>
+        <a  href="index.html">Startseite</a>
+
+    </nav>
+
+<main>
+
+    <div class="container">
     <video controls width="800">
         <source src="Epstein.mp4" type="video/mp4">
         Dein Browser unterstützt dieses Videoformat nicht
     </video>
+        <p>Epstein Files Song "There all in the files"</p>
+    </div>
+    </main>
+    <footer id="seitenfuss">
+        <p>Erstellt im Informatikunterricht | Klasse 10 | 2026 | <a href="impressum.html">Impressum</a> </p>
+    </footer>
 </body>
 </html>
