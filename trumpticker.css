@@ -106,3 +106,25 @@ nav {
     text-decoration: none;
     color: #e67e22;
 }
+
+html {
+    scroll-behavior: smooth;
+    
+}
+
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #163050;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-family: "Martiano Mono", monospace;
+}
+
+.scroll-button:hover {
+    background-color:#e67e22;
+    color:#cce0f5;
+}
