@@ -6,8 +6,8 @@
     <title>Du hat gewonnen!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
-    <style>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,-50..200;1,17..18,400..700,-50..200&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">   
+<style>
         body {
             margin: 0;
         }
@@ -19,6 +19,7 @@
             border:#d1d5db solid 2px ;
             background-color: #f9fafb;
             transition: all 0.4s ease;
+            font-family: "Google Sans", sans-serif;
             
         }
 
@@ -104,6 +105,33 @@
     text-decoration: none;
     color: #e67e22;
 }
+#weiter {
+    background-color: #163050;
+    height: 4rem;
+    width: 19rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    text-decoration: none;
+    font-family: "Google Sans", sans-serif;
+    font-variation-settings:
+    "GRAD" 100;
+    font-size: 1.2rem;
+}
+#weiter:hover {
+    background-color: #e67e22;
+    transition: all 0.07s ease-in-out;
+}
+.weitercontainer {
+    
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
     </style>
 </head>
 <body>
@@ -126,9 +154,12 @@
     <input size="60" placeholder="Wo versteckst du deinen Ersatz Schlüssel? (Nur zur Sicherheit)">
     <input size="40" placeholder="Alle Infos deines Personalausweises">
     </div>
+    <div class="weitercontainer">
+    <a id="weiter" href="serverfehler.html">Absenden und Iphone erhalten</a>
+    </div>
     <p>Notiz: man klickt auf weiter und muss dann captcha lösen.Danach dann: tut uns leid. es gab einen serverfehler. Grund: der ram ist nicht eingebaut und neuer ist zu teuer. Wenn sie spenden wollen, klicken sie auf den Link</p>
     <footer id="seitenfuss">
-        <p>Erstellt im Informatikunterricht | Klasse 10 | 2026 | <a href="impressum.html">Impressum</a> </p>
+        <p>Erstellt im Informatikunterricht | Klasse 10 | 2026 | <a href="impressum.html">Impressum</a> | <a href="uebersicht.html">Übersicht</a></p>
     </footer>
 </body>
 </html>
