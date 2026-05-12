@@ -181,3 +181,27 @@ nav a:hover{
 .trump:hover{
     color:#cce0f5
 }
+
+.Eilmeldung {
+	background-color: #ce1313;
+	margin: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 15px;
+	padding-top: 15px;
+    gap: 30px;
+    font-family: sans-serif;
+	}
+
+.Eilmeldung a {
+    font-weight: bold;
+    color: whitesmoke;
+    font-size: 1.1em;
+    text-decoration:none;
+}
+
+.Eilmeldung a:hover {
+    text-decoration:none;
+    color: greenyellow;
+}
