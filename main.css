@@ -183,25 +183,52 @@ nav a:hover{
 }
 
 .Eilmeldung {
-	background-color: #ce1313;
-	margin: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding-bottom: 15px;
-	padding-top: 15px;
-    gap: 30px;
-    font-family: sans-serif;
-	}
-
-.Eilmeldung a {
-    font-weight: bold;
-    color: whitesmoke;
-    font-size: 1.1em;
-    text-decoration:none;
+    overflow: hidden;
+    height: 45px;
+    background-color: #ce1313;
 }
 
-.Eilmeldung a:hover {
-    text-decoration:none;
+.label {
+    background-color: #a80000;
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 15px 20px;
+    flex-shrink: 0;
+}
+
+.ticker {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.ticker a {
+    margin: 0;
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker 120s linear infinite;
+
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: bold;
+
+    font-size: 1em;
+    line-height: 1;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.ticker a:hover {
     color: greenyellow;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
