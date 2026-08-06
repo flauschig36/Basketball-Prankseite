@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CAPTCHA</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.container{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,.15);
+    width:340px;
+}
+
+h2{
+    text-align:center;
+    margin-top:0;
+}
+
+#captchaCanvas{
+    border:1px solid #999;
+    border-radius:5px;
+    width:100%;
+    height:70px;
+    margin-bottom:10px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    box-sizing:border-box;
+    border:1px solid #bbb;
+    border-radius:5px;
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    background:#1976d2;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#125ea8;
+}
+
+#neu{
+    background:#666;
+    margin-top:8px;
+}
+
+#neu:hover{
+    background:#444;
+}
+
+#meldung{
+    margin-top:12px;
+    text-align:center;
+    font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>Bitte CAPTCHA lösen</h2>
+
+<canvas id="captchaCanvas" width="300" height="70"></canvas>
+
+<input
+type="text"
+id="captchaInput"
+placeholder="Code eingeben"
+autocomplete="off"
+maxlength="6">
+
+<button onclick="checkCaptcha()">
+Überprüfen
+</button>
+
+<button id="neu" onclick="drawCaptcha()">
+Neues CAPTCHA
+</button>
+
+<div id="meldung"></div>
+
+</div>
+
+<script>
+
+const canvas = document.getElementById("captchaCanvas");
+const ctx = canvas.getContext("2d");
+
+let captchaCode="";
+
+function createCode(){
+
+    const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+
+    captchaCode="";
+
+    for(let i=0;i<6;i++){
+
+        captchaCode+=chars.charAt(
+            Math.floor(Math.random()*chars.length)
+        );
+
+    }
+
+}
+
+function drawCaptcha(){
+
+    createCode();
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    ctx.fillStyle="#f0f0f0";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    for(let i=0;i<10;i++){
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            Math.random()*300,
+            Math.random()*70
+        );
+
+        ctx.lineTo(
+            Math.random()*300,
+            Math.random()*70
+        );
+
+        ctx.strokeStyle="rgba(100,100,100,.5)";
+        ctx.stroke();
+
+    }
+
+    for(let i=0;i<captchaCode.length;i++){
+
+        ctx.save();
+
+        ctx.font="30px Arial";
+
+        ctx.fillStyle="#222";
+
+        ctx.translate(
+            28+i*42,
+            40
+        );
+
+        ctx.rotate((Math.random()-0.5)*0.5);
+
+        ctx.fillText(
+            captchaCode[i],
+            0,
+            0
+        );
+
+        ctx.restore();
+
+    }
+
+    for(let i=0;i<80;i++){
+
+        ctx.fillStyle="rgba(0,0,0,.2)";
+
+        ctx.beginPath();
+
+        ctx.arc(
+            Math.random()*300,
+            Math.random()*70,
+            1.3,
+            0,
+            Math.PI*2
+        );
+
+        ctx.fill();
+
+    }
+
+    document.getElementById("captchaInput").value="";
+    document.getElementById("meldung").innerHTML="";
+
+}
+
+function checkCaptcha(){
+
+    let eingabe=document
+    .getElementById("captchaInput")
+    .value
+    .trim()
+    .toUpperCase();
+
+    if(eingabe===""){
+
+        document.getElementById("meldung").style.color="red";
+        document.getElementById("meldung").innerHTML="Bitte CAPTCHA eingeben.";
+        return;
+
+    }
+
+    if(eingabe===captchaCode){
+
+        document.getElementById("meldung").style.color="green";
+        document.getElementById("meldung").innerHTML="✔ CAPTCHA korrekt. Weiterleitung...";
+
+        setTimeout(function(){
+
+            window.location.href="serverfehler.html";
+
+        },1000);
+
+    }else{
+
+        document.getElementById("meldung").style.color="red";
+        document.getElementById("meldung").innerHTML="✖ Falscher Code.";
+
+        drawCaptcha();
+
+    }
+
+}
+
+drawCaptcha();
+
+</script>
+
+</body>
+</html>
