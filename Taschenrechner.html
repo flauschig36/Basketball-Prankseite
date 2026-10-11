@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taschenrechner</title>
+    <style> 
+html{
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding:0;
+}
+
+body{
+    align-items: center;
+    background: linear-gradient(320deg, #eb92be, #ffef78, #63c9b4);
+    display: flex;
+    font-family: 'Dosis', sans-serif;
+    font-display: swap;
+    height: inherit;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wrapper{
+    border-radius: 16px;
+    box-shadow:0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.34);
+    border:1px solid rgba(255, 255, 255, 0.34);
+    flex-basis: 400px;
+    height:540px;
+    padding: 20px 35px;
+}
+
+.screen{
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    color: #232323;
+    font-size: 35px;
+    overflow: auto;
+    padding: 20px;
+    text-align: right;
+    width: 326px;
+}
+
+.calc-buttons-row{
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 0;
+}
+
+.calc-botton{
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    flex-basis: 20%;
+    font-family: inherit;
+    font-size: 24px;
+    height: 65px;
+
+}
+
+.calc-botton:last-child{
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    background: #d72880;
+}
+
+.calc-botton:last-child:hover{
+    background-color: inherit;
+    color: inherit;
+}
+
+.calc-botton:hover{
+    background-color: inherit;
+}
+
+.calc-botton:active{
+    background-color: #ffef78;
+}
+
+.doouble{
+    flex-basis: 47%;
+}
+
+.triple{
+    flex-basis: 73%;   
+} </style>
+</head>
+<body>
+    <div class="wrapper">
+
+        <section class="screen">
+            0
+        </section>
+
+        <section class="calc-buttons">
+
+            <div class="calc-buttons-row">
+                <button class="calc-botton double">C</button>
+                <button class="calc-botton">&larr;</button>
+                <button class="calc-botton">&divide;</button>
+            </div>
+
+            <div class="calc-buttons-row">
+                <button class="calc-botton">7</button>
+                <button class="calc-botton">8</button>
+                <button class="calc-botton">9</button>
+                <button class="calc-botton">&times;</button>
+            </div>
+
+            <div class="calc-buttons-row">
+                <button class="calc-botton">4</button>
+                <button class="calc-botton">5</button>
+                <button class="calc-botton">6</button>
+                <button class="calc-botton">&minus;</button>
+            </div>
+
+            <div class="calc-buttons-row">
+                <button class="calc-botton">1</button>
+                <button class="calc-botton">2</button>
+                <button class="calc-botton">3</button>
+                <button class="calc-botton">&plus;</button>
+            </div>
+
+            <div class="calc-buttons-row">
+                <button class="calc-botton triple">0</button>
+                <button class="calc-botton">=</button>
+            </div>
+
+        </section>
+    </div>
+</body>
+</html>
+
+
+
+
+<script> 
+let runningTotal = 0;
+let buffer = "0";
+let previousoperator = null;
+
+const screen = document.querySelector('.screen');
+
+function buttonClick(value) {
+    if (isNaN(value)) {
+        handleSymbol(value);
+    } else {
+        handleNumber(value);
+    }
+
+    screen.innerText = buffer;
+}
+
+function handleSymbol(symbol) {
+    switch (symbol) {
+        case 'C':
+            buffer = '0';
+            runningTotal = 0;
+            previousoperator = null;
+            break;
+
+        case '=':
+            if (previousoperator === null) {
+                return;
+            }
+
+            flushOperation(parseInt(buffer));
+            previousoperator = null;
+            buffer = String(runningTotal);
+            runningTotal = 0;
+            break;
+
+        case '←':
+            if (buffer.length === 1) {
+                buffer = '0';
+            } else {
+                buffer = buffer.slice(0, -1);
+            }
+            break;
+
+        case '+':
+        case '−':
+        case '×':
+        case '÷':
+            handleMath(symbol);
+            break;
+    }
+}
+
+function handleMath(symbol) {
+    const intBuffer = parseInt(buffer);
+
+    if (previousoperator === null) {
+        runningTotal = intBuffer;
+    } else {
+        flushOperation(intBuffer);
+    }
+
+    previousoperator = symbol;
+    buffer = '0';
+}
+
+function flushOperation(intBuffer) {
+    if (previousoperator === '+') {
+        runningTotal += intBuffer;
+    } else if (previousoperator === '−') {
+        runningTotal -= intBuffer;
+    } else if (previousoperator === '×') {
+        runningTotal *= intBuffer;
+    } else if (previousoperator === '÷') {
+        if (intBuffer === 0) {
+            runningTotal = NaN;
+        } else {
+            runningTotal /= intBuffer;
+        }
+    }
+}
+
+function handleNumber(number) {
+    if (buffer === '0' || buffer === 'NaN') {
+        buffer = number;
+    } else {
+        buffer += number;
+    }
+}
+
+function init() {
+    document.querySelector('.calc-buttons').addEventListener('click', function(event) {
+        if (event.target.tagName === 'BUTTON') {
+            buttonClick(event.target.innerText.trim());
+        }
+    });
+}
+
+init(); </script>
+
+</body>
+</html>
