@@ -9,19 +9,28 @@
         /* todo ycyx*/
     </style>
     <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
-            localStorage.setItem(
-                "darkMode",
-                document.body.classList.contains("dark-mode")
-            );
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
 
-        }
-        if (localStorage.getItem("dark-mode") === "true"){
-            document.body.classList.add("dark-mode");
-        }
+        const darkModeAktiv =
+            document.body.classList.contains("dark-mode");
 
-    </script>
+        localStorage.setItem("darkMode", darkModeAktiv);
+
+        document.getElementById("theme-toggle")
+            .setAttribute("aria-pressed", String(darkModeAktiv));
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const darkModeAktiv =
+            localStorage.getItem("darkMode") === "true";
+
+        document.body.classList.toggle("dark-mode", darkModeAktiv);
+
+        document.getElementById("theme-toggle")
+            .setAttribute("aria-pressed", String(darkModeAktiv));
+    });
+</script>
 </head>
 <body>
 
@@ -38,7 +47,19 @@
         <a href="uebersicht.html">Übersicht</a>
         
         <a href="kontakt.html">Kontakt</a>
-        <button oneclick="toggleDarkMode() ">Dark Mode</button>
+        <button
+    class="theme-toggle"
+    id="theme-toggle"
+    type="button"
+    onclick="toggleDarkMode()"
+    aria-label="Dark Mode umschalten"
+    aria-pressed="false"
+>
+    <span class="toggle-circle">
+        <span class="sun-icon">☀</span>
+        <span class="moon-icon">☾</span>
+    </span>
+</button>
 
 </nav>
 
