@@ -232,3 +232,124 @@ nav a:hover{
         transform: translateX(-100%);
     }
 }
+
+
+/* DARK MODE */
+
+body.dark-mode {
+    background-color: #101820;
+    color: #e4eaf1;
+}
+
+body.dark-mode h1 {
+    color: #a8cfff;
+}
+
+body.dark-mode h2 {
+    color: #a8cfff;
+    border-left-color: #6da8ef;
+}
+
+body.dark-mode #seitenheader {
+    background-color: #142b43;
+    color: #ffffff;
+}
+
+body.dark-mode #seitenheader h1 {
+    color: #ffffff;
+}
+
+body.dark-mode #hauptinhalt {
+    background-color: #1b2836;
+    border-color: #34485c;
+}
+
+body.dark-mode #seitenfuss {
+    background-color: #101f30;
+    color: #b3c1d0;
+}
+
+body.dark-mode #seitenfuss a {
+    color: #b3c1d0;
+}
+
+body.dark-mode #seitenfuss a:hover {
+    color: #ffad66;
+}
+
+body.dark-mode .hervorgehoben {
+    background-color: #554522;
+    color: #ffe4a3;
+}
+
+body.dark-mode .infobox {
+    background-color: #203b55;
+    border-left-color: #6da8ef;
+    color: #e4eaf1;
+}
+
+body.dark-mode .karte {
+    background-color: #243548;
+    border-color: #40546a;
+    color: #e4eaf1;
+}
+
+body.dark-mode a {
+    color: #8abaff;
+}
+
+body.dark-mode a:hover {
+    color: #ffad66;
+}
+
+body.dark-mode .karte:hover {
+    border-color: #8abaff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .button {
+    background-color: #315d88;
+    color: #ffffff;
+}
+
+body.dark-mode .button:hover {
+    background-color: #b85e18;
+    color: #ffffff;
+}
+
+body.dark-mode nav {
+    background-color: #101f30;
+}
+
+body.dark-mode nav a {
+    color: #c5dcf5;
+}
+
+body.dark-mode nav a:hover {
+    color: #ffad66;
+}
+
+body.dark-mode .trump {
+    color: #ffad66;
+}
+
+body.dark-mode .trump:hover {
+    color: #c5dcf5;
+}
+
+body.dark-mode .Eilmeldung {
+    background-color: #941b24;
+}
+
+body.dark-mode .label {
+    background-color: #71121a;
+    color: #ffffff;
+}
+
+body.dark-mode .ticker a {
+    color: #ffffff;
+}
+
+body.dark-mode .ticker a:hover {
+    color: #c5ff75;
+}
